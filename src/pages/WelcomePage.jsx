@@ -1,7 +1,11 @@
 import "./WelcomePage.css";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 function WelcomePage() {
+    
+    const navigate = useNavigate();
+
     return (
         <div className="welcome-page">
             <div className="logo-container">
@@ -21,7 +25,9 @@ function WelcomePage() {
                 <span className="dot"></span>
             </div>
 
-            <button className="start-button">
+            <button 
+                className="start-button"
+                onClick={() => navigate("/broker-login")}>
                 Get Started
             </button>
         </div>
