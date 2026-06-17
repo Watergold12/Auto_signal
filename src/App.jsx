@@ -6,7 +6,8 @@ import heroImg from './assets/hero.png'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WelcomePage from './pages/WelcomePage'
 import BrokerLogin from './pages/BrokerLogin'
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage"
+import Dashboard from "./pages/Dashboard";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/" element={<WelcomePage />} />
                 <Route path="/broker-login" element={<BrokerLogin />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -19,76 +22,83 @@ function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    console.log("User ID:", formData.userId);
+    console.log("Password:", formData.password);
 
-    alert("Login Successful!");
+    navigate("/dashboard");
   };
 
   return (
     <div className="login-page">
       <div className="login-card">
+
+        {/* Left Side */}
         <div className="logo-section">
           <h1 className="brand-name">Trade Smart</h1>
+
           <p className="tagline">
             Trade Smarter. Invest Better.
           </p>
+
+          <div className="footer">
+            Secure Trading Platform
+          </div>
         </div>
 
-        <h2 className="title">Login to Trade Smart</h2>
+        {/* Right Side */}
+        <div className="login-form-section">
 
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label>User ID</label>
-            <input
-              type="text"
-              name="userId"
-              placeholder="Enter User ID"
-              value={formData.userId}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          <h2 className="title">
+            Login to Trade Smart
+          </h2>
 
-          <div className="input-group">
-            <label>Password</label>
+          <form onSubmit={handleSubmit}>
 
-            <div className="password-wrapper">
+            <div className="input-group">
+              <label>User ID</label>
+
               <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Enter Password"
-                value={formData.password}
+                type="text"
+                name="userId"
+                placeholder="Enter User ID"
+                value={formData.userId}
                 onChange={handleChange}
-                required
               />
-
-              <button
-                type="button"
-                className="eye-btn"
-                onClick={() =>
-                  setShowPassword(!showPassword)
-                }
-              >
-                {showPassword ? "🙈" : "👁"}
-              </button>
             </div>
-          </div>
 
-          <button
-            type="submit"
-            className="login-btn"
-          >
-            Login
-          </button>
-        </form>
+            <div className="input-group">
+              <label>Password</label>
 
-        <a href="/" className="forgot-link">
-          Forgot User ID or Password?
-        </a>
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  placeholder="Enter Password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
 
-        <div className="footer">
-          🔒 Secure Trading Platform
+                <button
+                  type="button"
+                  className="eye-btn"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="login-btn"
+            >
+              Login
+            </button>
+
+          </form>
+
         </div>
+
       </div>
     </div>
   );
