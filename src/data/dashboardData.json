@@ -17,5 +17,16 @@
   "autoTrading": {
     "status": "Active",
     "lastUpdated": "10:30:45 AM"
+  },
+
+  "signal": {
+    "symbol": "NIFTY 50",
+    "action": "BUY",
+    "price": "22,345.60",
+    "entryPrice": "22,320.00",
+    "target1": "22,450.00",
+    "target2": "22,580.00",
+    "stopLoss": "22,150.00",
+    "confidence": "85%"
   }
 }

@@ -1,0 +1,123 @@
+.details-page{
+    min-height: 100vh;
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.page-title{
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.details-card{
+    width: 700px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: black;
+}
+
+.signal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buy-badge{
+    background-color: #22c55e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.signal-price{
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+.graph-placeholder{
+    height: 200px;
+    background-color: #eef2ff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.detail-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.quantity-controls{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quantity-controls button{
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6366f1;
+    color: white;
+    cursor: pointer;
+}
+
+.product-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.order-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product-section select,
+.order-section select{
+    width: 140px;
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    border: 1px solid #d1d5db;
+}
+
+.place-order-btn{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6366f1;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signal-header h2{
+    color: black;
+}
+
+.quantity-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
