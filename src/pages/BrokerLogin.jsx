@@ -1,27 +1,42 @@
-import './BrokerLogin.css'
+import "./BrokerLogin.css";
+import { useNavigate } from "react-router-dom";
 
 function BrokerLogin() {
-    return(
-        <div className="broker-page">
+  const navigate = useNavigate();
 
-            <h1 className='broker-title'>Broker Login</h1>
+  const handleLoginClick = () => {
+    console.log("Clicked");
+    navigate("/login");
+  };
 
-            <p>
-                Login to your broker account
-                to connect and trade
-            </p>
+  return (
+    <div className="broker-page">
+      <h1 className="broker-title">Broker Login</h1>
 
-            <div className="broker-card">
-                <img src="https://www.tradesmartonline.in/images/logo.png" alt="TradeSmart Logo" />
-            </div>
+      <p className="broker-subtitle">
+        Login to your broker account
+        <br />
+        to connect and trade
+      </p>
 
-            <p>
-                We never store your credentials.
-                Secure API integration via broker.
-            </p>
+      <div
+        className="broker-card"
+        onClick={handleLoginClick}
+      >
+        <img
+          src="https://www.tradesmartonline.in/images/logo.png"
+          alt="TradeSmart Logo"
+          className="broker-logo"
+        />
+      </div>
 
-        </div> 
-    )
+      <p className="broker-footer">
+        We never store your credentials.
+        <br />
+        Secure API integration via broker.
+      </p>
+    </div>
+  );
 }
 
 export default BrokerLogin;

@@ -1,0 +1,21 @@
+{
+  "broker": {
+    "name": "Trade Smart",
+    "status": "Active"
+  },
+
+  "accountOverview": {
+    "equity": "₹2,45,678.90",
+    "availableMargin": "₹1,25,430.50"
+  },
+
+  "performance": {
+    "pnl": "+₹3,456.78",
+    "percentage": "+1.43%"
+  },
+
+  "autoTrading": {
+    "status": "Active",
+    "lastUpdated": "10:30:45 AM"
+  }
+}
