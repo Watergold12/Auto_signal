@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import data from "../data/dashboardData.json";
 import "./SignalDetails.css";
 
 function SignalDetails() {
 
+    const navigate = useNavigate();
     const [quantity, setQuantity] = useState(50);
     
     return (
@@ -82,7 +84,7 @@ function SignalDetails() {
                     </select>
                 </div>
 
-                <button className="place-order-btn">
+                <button className="place-order-btn" onClick={() => navigate("/confirm-order")}>
                     Place Order
                 </button>
 

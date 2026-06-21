@@ -28,5 +28,26 @@
     "target2": "22,580.00",
     "stopLoss": "22,150.00",
     "confidence": "85%"
+  },
+
+  "orderConfirmation": {
+    "symbol": "NIFTY 50",
+    "action": "BUY",
+    "quantity": 50,
+    "orderType": "MARKET",
+    "product": "MIS",
+    "entryPrice": "22,320.00",
+    "totalAmount": "₹11,16,000.00"
+  },
+
+  "orderPlaced": {
+    "orderId": "230519000123456",
+    "instrument": "NIFTY 50",
+    "type": "BUY",
+    "quantity": 50,
+    "orderType": "MARKET",
+    "status": "COMPLETE",
+    "statusMessage": "Order Placed Successfully!",
+    "time": "10:26:15 AM"
   }
 }

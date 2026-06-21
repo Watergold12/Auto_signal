@@ -10,6 +10,8 @@ import LoginPage from "./pages/LoginPage"
 import Dashboard from "./pages/Dashboard";
 import SignalPage from "./pages/SignalPage";
 import SignalDetails from "./pages/SignalDetails";
+import ConfirmOrder from "./pages/ConfirmOrder";
+import OrderPlaced from "./pages/OrderPlaced";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/signal" element={<SignalPage />} />
                 <Route path="/signal-details" element={<SignalDetails />} />
+                <Route path="/confirm-order" element={<ConfirmOrder />} />
+                <Route path="/order-placed" element={<OrderPlaced />} />
             </Routes>
         </BrowserRouter>
     );
