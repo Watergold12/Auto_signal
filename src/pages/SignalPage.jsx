@@ -1,4 +1,5 @@
 import data from "../data/dashboardData.json";
+// import commonservice from service;
 import { useNavigate } from "react-router-dom";
 import "./SignalPage.css";
 

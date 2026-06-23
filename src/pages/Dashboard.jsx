@@ -4,7 +4,6 @@ import dashboardData from "../data/dashboardData.json";
 function Dashboard() {
   return (
     <div className="dashboard-page">
-      <div className="dashboard-container">
 
         {/* Header */}
         <div className="dashboard-header">
@@ -109,7 +108,6 @@ function Dashboard() {
 
         </div>
 
-      </div>
     </div>
   );
 }
