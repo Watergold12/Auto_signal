@@ -1,77 +1,38 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import AppShell from "../components/AppShell";
 import data from "../data/dashboardData.json";
 import "./OrderPlaced.css";
 
 function OrderPlaced() {
-    const navigate = useNavigate();
-    const orderData = data.orderPlaced;
+  const orderData = data.orderPlaced;
 
-    const handleViewOrders = () => {
-        navigate("/dashboard");
-    };
+  return (
+    <AppShell eyebrow="Orders" title="Order submitted">
+      <div className="order-placed-page">
+        <section className="order-placed-card">
+          <div className="success-icon">OK</div>
+          <p className="order-state">Order status</p>
+          <h2>{orderData.statusMessage}</h2>
+          <p className="success-subtext">The order has been sent to your broker and is now complete.</p>
+          <span className="complete-badge">{orderData.status}</span>
 
-    return (
-        <div className="order-placed-page">
-            <div className="order-placed-card">
-                <h2 className="card-title">Order Status</h2>
+          <div className="placed-order-details">
+            <div><span>Order ID</span><strong>{orderData.orderId}</strong></div>
+            <div><span>Instrument</span><strong>{orderData.instrument}</strong></div>
+            <div><span>Type</span><strong>{orderData.type}</strong></div>
+            <div><span>Quantity</span><strong>{orderData.quantity}</strong></div>
+            <div><span>Order type</span><strong>{orderData.orderType}</strong></div>
+            <div><span>Placed at</span><strong>{orderData.time}</strong></div>
+          </div>
 
-                <div className="success-container">
-                    <div className="success-icon">✓</div>
-                    <h3 className="success-message">{orderData.statusMessage}</h3>
-                    <p className="success-subtext">Your order has been placed via broker API.</p>
-                </div>
-
-                <div className="order-details">
-                    <div className="order-info-row">
-                        <span className="info-label">Order ID</span>
-                        <span className="info-value">{orderData.orderId}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Instrument</span>
-                        <span className="info-value">{orderData.instrument}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Type</span>
-                        <span className="info-value">{orderData.type}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Qty</span>
-                        <span className="info-value">{orderData.quantity}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Order Type</span>
-                        <span className="info-value">{orderData.orderType}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Status</span>
-                        <span className="info-value status-complete">{orderData.status}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Time</span>
-                        <span className="info-value">{orderData.time}</span>
-                    </div>
-                </div>
-
-                <button className="view-orders-btn" onClick={handleViewOrders}>
-                    View Orders
-                </button>
-
-                <div className="nav-tabs">
-                    <button className="nav-tab active">Home</button>
-                    <button className="nav-tab">Signals</button>
-                    <button className="nav-tab">Orders</button>
-                    <button className="nav-tab">Positions</button>
-                    <button className="nav-tab">More</button>
-                </div>
-            </div>
-        </div>
-    );
+          <div className="success-actions">
+            <Link className="view-orders-btn" to="/dashboard">Back to dashboard</Link>
+            <Link className="new-signal-link" to="/signal">View market signals</Link>
+          </div>
+        </section>
+      </div>
+    </AppShell>
+  );
 }
 
 export default OrderPlaced;

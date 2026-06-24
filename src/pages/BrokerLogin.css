@@ -1,31 +1,103 @@
-.broker-page{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f6fa;
-    color: #222;
-    gap: 20px;
+.broker-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px;
+  background: #f4f7fb;
 }
 
-.broker-title{
-    font-weight: bold;
-    color:#222
+.broker-login-panel {
+  width: 100%;
+  max-width: 590px;
+  padding: 38px;
+  border: 1px solid #e2e8f1;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(24, 34, 48, 0.06);
 }
 
-.broker-card{
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    cursor: pointer;
-    height: none;
+.broker-overline {
+  color: #5165d3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
-.broker-card img{
-    width: 150px;
-    height: 50px;
+.broker-title {
+  margin: 10px 0 9px;
+  color: #1d293b;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.broker-subtitle {
+  max-width: 440px;
+  margin: 0;
+  color: #78859a;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.broker-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 17px;
+  padding: 16px;
+  border: 1px solid #dfe5ee;
+  border-radius: 6px;
+  background: #ffffff;
+  text-align: left;
+}
+
+.broker-card:hover {
+  border-color: #99a8f6;
+  background: #fafbff;
+}
+
+.broker-logo {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f0f2ff;
+}
+
+.broker-logo img {
+  width: 31px;
+  height: 31px;
+  object-fit: contain;
+}
+
+.broker-name {
+  display: grid;
+  gap: 4px;
+}
+
+.broker-name strong {
+  color: #29364b;
+  font-size: 13px;
+}
+
+.broker-name small {
+  color: #8894a7;
+  font-size: 11px;
+}
+
+.broker-arrow {
+  margin-left: auto;
+  color: #2d44d4;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.broker-footer {
+  margin: 0;
+  color: #8b97aa;
+  font-size: 11px;
+  line-height: 1.5;
 }

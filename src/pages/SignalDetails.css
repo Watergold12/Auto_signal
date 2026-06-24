@@ -1,123 +1,261 @@
-.details-page{
-    min-height: 100vh;
-    background-color: #f5f6fa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
+.details-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(330px, 0.72fr);
+  gap: 22px;
 }
 
-.page-title{
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    color: #111827;
+.details-card,
+.order-ticket {
+  border: 1px solid #e2e8f1;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(24, 34, 48, 0.035);
 }
 
-.details-card{
-    width: 700px;
-    background-color: white;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: black;
+.details-card {
+  overflow: hidden;
 }
 
-.signal-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.details-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 28px 22px;
 }
 
-.buy-badge{
-    background-color: #22c55e;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 12px;
-    font-weight: bold;
+.details-card-header h2,
+.ticket-heading h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 23px;
+  letter-spacing: 0;
 }
 
-.signal-price{
-    text-align: center;
-    margin: 20px 0;
-    font-size: 2rem;
+.details-card-header p {
+  margin: 6px 0 0;
+  color: #8793a6;
+  font-size: 11px;
 }
 
-.graph-placeholder{
-    height: 200px;
-    background-color: #eef2ff;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
+.details-price {
+  display: grid;
+  align-content: start;
+  justify-items: end;
+  gap: 5px;
 }
 
-.detail-row{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+.details-price strong {
+  font-size: 22px;
 }
 
-.quantity-controls{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.details-price span {
+  color: #19945e;
+  font-size: 11px;
+  font-weight: 700;
 }
 
-.quantity-controls button{
-    width: 35px;
-    height: 35px;
-    border: none;
-    border-radius: 8px;
-    background-color: #6366f1;
-    color: white;
-    cursor: pointer;
+.details-chart {
+  height: 250px;
+  display: grid;
+  place-items: center;
+  border-top: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
+  background:
+    linear-gradient(#f5f7fb 1px, transparent 1px),
+    linear-gradient(90deg, #f5f7fb 1px, transparent 1px);
+  background-size: 100% 50px, 90px 100%;
 }
 
-.product-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.details-chart img {
+  width: 74%;
+  height: 80%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 
-.order-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.plan-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #edf0f4;
 }
 
-.product-section select,
-.order-section select{
-    width: 140px;
-
-    padding: 8px;
-
-    border-radius: 8px;
-
-    border: 1px solid #d1d5db;
+.plan-table div {
+  display: grid;
+  gap: 7px;
+  padding: 17px 20px;
+  border-right: 1px solid #edf0f4;
 }
 
-.place-order-btn{
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 12px;
-    background-color: #6366f1;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
+.plan-table div:last-child {
+  border: 0;
 }
 
-.signal-header h2{
-    color: black;
+.plan-table span {
+  color: #8490a4;
+  font-size: 10px;
 }
 
-.quantity-section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.plan-table strong {
+  color: #303c50;
+  font-size: 12px;
+}
+
+.plan-table .loss strong {
+  color: #cf5663;
+}
+
+.trade-rationale {
+  padding: 21px 28px 25px;
+}
+
+.trade-rationale strong {
+  color: #394559;
+  font-size: 12px;
+}
+
+.trade-rationale p {
+  max-width: 620px;
+  margin: 8px 0 0;
+  color: #778499;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.order-ticket {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+
+.ticket-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.ticket-heading p {
+  margin: 0 0 7px;
+  color: #8390a4;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ticket-instrument {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0 5px;
+  padding: 14px 0;
+  border-top: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.ticket-instrument strong {
+  color: #324057;
+  font-size: 13px;
+}
+
+.ticket-instrument span {
+  color: #8a96a8;
+  font-size: 11px;
+}
+
+.ticket-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.ticket-field > span {
+  color: #6f7d91;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ticket-field select {
+  min-width: 108px;
+  padding: 8px 25px 8px 10px;
+  color: #344056;
+  border: 1px solid #dce3ed;
+  border-radius: 4px;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: 30px 42px 30px;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #dce3ed;
+  border-radius: 4px;
+}
+
+.stepper button {
+  height: 30px;
+  border: 0;
+  color: #314055;
+  background: #f7f9fc;
+  font-size: 16px;
+}
+
+.stepper strong {
+  color: #344055;
+  font-size: 12px;
+  text-align: center;
+}
+
+.ticket-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 0;
+}
+
+.ticket-total span {
+  color: #647186;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ticket-total strong {
+  color: #273449;
+  font-size: 15px;
+}
+
+.ticket-note {
+  padding: 11px 12px;
+  color: #5e6c82;
+  border-left: 3px solid #8ea0ff;
+  background: #f3f5ff;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.place-order-btn {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff;
+  background: #2d44d4;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.review-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #248d5d;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.review-status i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #31c680;
 }

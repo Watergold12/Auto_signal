@@ -1,75 +1,54 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AppShell from "../components/AppShell";
 import data from "../data/dashboardData.json";
 import "./ConfirmOrder.css";
 
 function ConfirmOrder() {
-    const navigate = useNavigate();
-    const orderData = data.orderConfirmation;
+  const navigate = useNavigate();
+  const orderData = data.orderConfirmation;
 
-    const handleConfirmOrder = () => {
-        navigate("/order-placed");
-    };
-
-    const handleCancel = () => {
-        navigate("/signal-details");
-    };
-
-    return (
-        <div className="confirm-order-page">
-            <div className="confirm-order-card">
-                <h2 className="card-title">Confirm Order</h2>
-
-                <div className="order-details">
-                    <div className="order-symbol-header">
-                        <h3 className="symbol-name">{orderData.symbol}</h3>
-                        <span className="action-badge">{orderData.action}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Qty</span>
-                        <span className="info-value">{orderData.quantity}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Order Type</span>
-                        <span className="info-value">{orderData.orderType}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Product</span>
-                        <span className="info-value">{orderData.product}</span>
-                    </div>
-
-                    <div className="order-info-row">
-                        <span className="info-label">Entry Price (Est.)</span>
-                        <span className="info-value">{orderData.entryPrice}</span>
-                    </div>
-
-                    <div className="order-divider"></div>
-
-                    <div className="order-info-row total-amount">
-                        <span className="info-label">Total Amount (Est.)</span>
-                        <span className="info-value">{orderData.totalAmount}</span>
-                    </div>
-
-                    <div className="order-note">
-                        <span className="note-icon">ℹ</span>
-                        <span className="note-text">Order will be placed via your connected broker account using API.</span>
-                    </div>
-                </div>
-
-                <div className="button-group">
-                    <button className="confirm-btn" onClick={handleConfirmOrder}>
-                        Confirm & Place Order
-                    </button>
-                    <button className="cancel-btn" onClick={handleCancel}>
-                        Cancel
-                    </button>
-                </div>
+  return (
+    <AppShell eyebrow="Signal desk / NIFTY 50 / Review" title="Confirm your order">
+      <div className="confirm-order-page">
+        <section className="confirmation-layout">
+          <article className="confirmation-card">
+            <div className="confirmation-card-head">
+              <div>
+                <p>Review details before submitting</p>
+                <h2>{orderData.symbol}</h2>
+                <span>Intraday market order</span>
+              </div>
+              <span className="action-badge">{orderData.action}</span>
             </div>
-        </div>
-    );
+
+            <div className="confirmation-grid">
+              <div><span>Quantity</span><strong>{orderData.quantity}</strong></div>
+              <div><span>Product</span><strong>{orderData.product}</strong></div>
+              <div><span>Order type</span><strong>{orderData.orderType}</strong></div>
+              <div><span>Entry price (est.)</span><strong>{orderData.entryPrice}</strong></div>
+            </div>
+
+            <div className="order-total">
+              <span>Estimated order value</span>
+              <strong>{orderData.totalAmount}</strong>
+            </div>
+          </article>
+
+          <aside className="submit-panel">
+            <div className="submit-icon">OK</div>
+            <h2>Ready to send</h2>
+            <p>This order will be placed with Trade Smart using your connected broker session.</p>
+            <div className="submit-details">
+              <span>Broker connection</span>
+              <strong><i /> Active and secure</strong>
+            </div>
+            <button className="confirm-btn" onClick={() => navigate("/order-placed")}>Confirm &amp; place order</button>
+            <button className="cancel-btn" onClick={() => navigate("/signal-details")}>Back to order ticket</button>
+          </aside>
+        </section>
+      </div>
+    </AppShell>
+  );
 }
 
 export default ConfirmOrder;
