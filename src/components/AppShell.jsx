@@ -6,7 +6,7 @@ const navigation = [
   { label: "Overview", path: "/dashboard", icon: "OV" },
   { label: "Signals", path: "/signal", icon: "SG" },
   { label: "Orders", path: "/order-placed", icon: "OR" },
-  { label: "Positions", path: "/dashboard", icon: "PS" },
+  { label: "Positions", path: "#", icon: "PS" },
 ];
 
 function AppShell({ children, eyebrow, title, actions }) {

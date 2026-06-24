@@ -116,7 +116,6 @@
 
 .signal-chart-wrap {
   position: relative;
-  height: 236px;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -212,7 +211,7 @@
 
 .score-ring {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   width: 57px;
   height: 57px;

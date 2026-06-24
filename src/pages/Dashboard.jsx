@@ -48,7 +48,6 @@ function Dashboard() {
             </div>
             <span className="status-pill"><i /> {broker.status}</span>
           </div>
-          <div className="broker-symbol">TS</div>
           <dl className="account-list">
             <div>
               <dt>Available margin</dt>

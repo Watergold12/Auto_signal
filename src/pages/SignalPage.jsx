@@ -78,7 +78,6 @@ function SignalPage() {
           <div className="section-title">
             <div>
               <p className="section-kicker">More opportunities</p>
-              <h2>Signal history</h2>
             </div>
             <button className="filter-button" type="button">Filter signals</button>
           </div>

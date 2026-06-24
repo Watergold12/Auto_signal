@@ -54,7 +54,6 @@
 }
 
 .details-chart {
-  height: 250px;
   display: grid;
   place-items: center;
   border-top: 1px solid #edf0f4;
