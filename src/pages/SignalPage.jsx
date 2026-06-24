@@ -1,11 +1,28 @@
 import { Link, useNavigate } from "react-router-dom";
 import AppShell from "../components/AppShell";
-import data from "../data/dashboardData.json";
+import { useEffect, useState } from "react";
+import { getDashboardData } from "../services/dashboardService";
 import graph from "../assets/stock.png";
 import "./SignalPage.css";
 
 function SignalPage() {
   const navigate = useNavigate();
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const result = await getDashboardData();
+      setData(result);
+    };
+
+    loadData();
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   const { signal } = data;
 
   return (
@@ -59,7 +76,7 @@ function SignalPage() {
                 <p>Signal quality</p>
                 <h3>High conviction</h3>
               </div>
-              <div className="score-ring"><strong>85</strong><span>%</span></div>
+              <div className="score-ring"><strong>{signal.confidence}</strong><span>%</span></div>
             </div>
             <div className="quality-meter"><i /></div>
             <p className="summary-copy">Price and volume are aligned with the current directional momentum.</p>

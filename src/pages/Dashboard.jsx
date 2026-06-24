@@ -1,10 +1,32 @@
 import { Link } from "react-router-dom";
 import AppShell from "../components/AppShell";
-import dashboardData from "../data/dashboardData.json";
+import { useEffect, useState } from "react";
+import { getDashboardData } from "../services/dashboardService";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const { broker, accountOverview, performance, autoTrading, signal } = dashboardData;
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const result = await getDashboardData();
+      setData(result);
+    };
+
+    loadData();
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  const {
+    broker,
+    accountOverview,
+    performance,
+    autoTrading,
+    signal,
+  } = data;
 
   return (
     <AppShell
