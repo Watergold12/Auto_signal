@@ -26,6 +26,7 @@ build/
 # IDE files
 .vscode/
 .idea/
+.agents/
 
 # OS generated files
 .DS_Store
